@@ -6,7 +6,7 @@ module flow_led (
 );
 
 reg [24:0] cnt;
-parameter FLASH_PERIOD = 25'd25;
+parameter FLASH_PERIOD = 25'd25000000;
 
 
 /* Count until time reach FLASH_PERIOD */
