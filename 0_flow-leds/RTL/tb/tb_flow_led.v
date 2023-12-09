@@ -1,8 +1,8 @@
 `timescale 1ns/1ns
 
 module tb_flow_led();
-reg sys_clk;
-reg sys_rst;
+reg [0:0] sys_clk;
+reg [0:0] sys_rst;
 
 wire [1:0] led;
 

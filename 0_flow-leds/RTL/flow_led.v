@@ -1,12 +1,12 @@
 module flow_led (
-    input sys_clk,
-    input sys_rst,
+    input wire [0:0] sys_clk,
+    input wire [0:0] sys_rst,
 
     output reg [1:0] led
 );
 
 reg [24:0] cnt;
-parameter FLASH_PERIOD = 25'd25000000;
+parameter FLASH_PERIOD = 25'd25;
 
 
 /* Count until time reach FLASH_PERIOD */
@@ -32,5 +32,4 @@ always @(posedge sys_clk or negedge sys_rst) begin
     end
     else;
 end
-    
 endmodule
