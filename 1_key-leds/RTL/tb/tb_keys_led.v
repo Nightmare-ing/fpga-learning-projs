@@ -1,5 +1,5 @@
 `timescale 1ns/1ns
-module tb-keys-led();
+module tb_keys_led();
 
 reg [0:0] sys_clk;
 reg [0:0] sys_rst;
@@ -25,7 +25,7 @@ end
 // generate clk signal
 always #(CLK_PERIOD / 2) sys_clk <= ~sys_clk;
 
-keys_led u_keys_led(
+keys_led #(FLASH_PERIOD) u_keys_led(
     .sys_clk (sys_clk),
     .sys_rst (sys_rst),
     .keys (keys),

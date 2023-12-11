@@ -1,8 +1,8 @@
 module keys_led (
-    input wire [0:0] sys_clk;
-    input wire [0:0] sys_rst;
-    input wire [1:0] keys;
-    output reg [1:0] leds;
+    input wire [0:0] sys_clk,
+    input wire [0:0] sys_rst,
+    input wire [1:0] keys,
+    output reg [1:0] leds
 );
 
 parameter FLASH_PERID = 25'd25000000;
