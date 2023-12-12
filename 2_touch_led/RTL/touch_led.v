@@ -1,8 +1,8 @@
 module touch_led (
-    input wire [0:0] sys_clk;
-    input wire [0:0] sys_rst;
-    input wire [0:0] touch_key;
-    output reg [0:0] led;
+    input wire [0:0] sys_clk,
+    input wire [0:0] sys_rst,
+    input wire [0:0] touch_key,
+    output reg [0:0] led
 );
 
 reg [0:0] touch_key_b0;
