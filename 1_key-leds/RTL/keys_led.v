@@ -13,8 +13,10 @@ reg [0:0] flash_flag;
 // count for 0.5s
 reg [24:0] cnt;
 always @(posedge sys_clk or negedge sys_rst) begin
-    if (!sys_rst)
+    if (!sys_rst) begin
         cnt <= 25'd0;
+        flash_flag <= 25'd0;
+    end
     else if (cnt < CNT_MAX) 
         cnt <= cnt + 1;
     else begin
