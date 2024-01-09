@@ -17,8 +17,7 @@ reg [0:0] proc_flag;
 always @(posedge sys_clk or negedge sys_rst) begin
     if (!sys_rst) begin
         cnt_2us <= 7'd0;
-    end
-    if (cnt_2us < CNT_2US_MAX - 7'd1) begin
+    end else if (cnt_2us < CNT_2US_MAX - 7'd1) begin
         cnt_2us <= cnt_2us + 7'd1;
     end else begin
         cnt_2us <= 7'd0;
@@ -29,8 +28,7 @@ end
 always @(posedge sys_clk or negedge sys_rst) begin
     if (!sys_rst) begin
         cnt_2ms <= 10'd0;
-    end
-    if (cnt_2ms < CNT_2MS_MAX - 10'd1) begin
+    end else if (cnt_2ms < CNT_2MS_MAX - 10'd1) begin
         if (cnt_2us == CNT_2US_MAX - 7'd1)begin
             cnt_2ms <= cnt_2ms + 10'd1;
         end
@@ -44,8 +42,7 @@ always @(posedge sys_clk or negedge sys_rst) begin
     if (!sys_rst) begin
         cnt_2s <= 10'd0;
         proc_flag <= 1'd0;
-    end
-    if (cnt_2s < CNT_2S_MAX - 10'd1) begin
+    end else if (cnt_2s < CNT_2S_MAX - 10'd1) begin
         if (cnt_2ms == CNT_2MS_MAX - 10'd1) begin
             cnt_2s <= cnt_2s + 10'd1;
         end
@@ -59,8 +56,7 @@ end
 always @(posedge sys_clk or negedge sys_rst) begin
     if (!sys_rst) begin
         led <= 1'd0;
-    end
-    if (cnt_2ms < cnt_2s) begin
+    end else if (cnt_2ms < cnt_2s) begin
         led <= ~proc_flag;
     end else begin
         led <= proc_flag;
