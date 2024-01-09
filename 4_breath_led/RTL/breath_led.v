@@ -1,7 +1,7 @@
 module breath_led (
-    input wire [0:0] sys_clk;
-    input wire [0:0] sys_rst;
-    output reg [0:0] led;
+    input wire [0:0] sys_clk,
+    input wire [0:0] sys_rst,
+    output reg [0:0] led
 );
 
 parameter CNT_US_MAX = 7'd100;
@@ -37,6 +37,7 @@ always @(posedge sys_clk or negedge sys_rst) begin
         cnt_ms <= 10'd0;
         proc_flag <= ~proc_flag;
     end
+end
     
 /* control led */
 always @(posedge sys_clk or negedge sys_rst) begin

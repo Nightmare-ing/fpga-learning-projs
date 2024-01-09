@@ -22,5 +22,5 @@ breath_led breath_led_inst(
     .sys_clk (sys_clk),
     .sys_rst (sys_rst),
     .led (led)
-)
+);
 endmodule
